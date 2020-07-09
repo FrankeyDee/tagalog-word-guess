@@ -1,0 +1,33 @@
+.container {
+    text-align: center;
+    align-content: center;
+    display: flex;
+}
+
+.container>* {
+    margin: 0 1px;
+    flex: 1;
+}
+
+.title {
+    height: 100px;
+    text-align: center;
+}
+
+.scoreboard {
+    border: solid 2px;
+    padding: 10px 20px 10px 20px;
+    margin: 50px 50px 50px 50px;
+}
+
+.center-display {
+    border: solid 2px;
+    padding: 10px 20px 10px 20px;
+    margin: 50px 50px 50px 50px;
+}
+
+.play-game{
+    border: solid 2px;
+    padding: 10px 20px 10px 20px;
+    margin: 50px 50px 50px 50px;
+}
