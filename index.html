@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="css/stylesheet.css">
 
 
-    <title>Hello, world!</title>
+    <title>Yung Ano</title>
   </head>
   <body>
     <div class="title">
         <h1>Yung Ano...</h1>
         <h4>A tagalog word guessing game</h4>
-        <button id="start">Start!</button>
+        <button id="start-button" onclick="startGame()">Start!</button>
     </div>
     <div class="container">
         <p class="scoreboard">
@@ -25,16 +25,68 @@
             <br>Losses: <span id="loss">0</span>
         </p>
         
-        <p class="center-display">What is the tagalog word for
-            <br><span id="picture"></span>
-        </p>
+        <div class="center-display" id="ran-image">
+        </div>
         
-        <p class="play-game"><span id="blanks">Click on "Start" to play!</span></p>
+        
+        <p class="play-game"><span id="blanks">Click on "Start!" to play!</span></p>
       </div>
       
 
     <!-- Optional JavaScript -->
     <script>
+        var tagalogWords = ['lalaki', 'babae', 'manok', 'aso', 'isda'];
+        var imagesArray = ['lalaki.jpg', 'babae.jpg', 'manok.jpg', 'aso.jpg', 'isda.jpg'];
+        var guessesLeft = 10;
+        var winScore = 0;
+        var loseScore = 0;
+
+        
+        //EVENT: click on start button starts game/resets
+        function startGame() {
+            
+            //display random image in #picture
+                var randomIndex = Math.floor(Math.random()*imagesArray.length);
+                var ranImage = imagesArray[randomIndex];
+
+                document.getElementById('ran-image').innerHTML = "What is the tagalog word for <br> <img src='./images/"+ranImage+"' />";
+            //print filename, create array, delete '.jpg'
+                var fileName = ranImage.split('');
+                var length = fileName.length;
+                console.log(fileName)
+                for (var j = length-4; j < length; j++) {
+                    fileName.pop();
+                }
+
+                console.log(fileName)
+            // dot placeholder (temporary)    
+                document.getElementById('blanks').innerHTML = "<img id='dot' src='./images/dot.jpg' />"
+
+            //display blanks in .play-game
+                //print name of image
+
+                //show characters as blanks
+            //display user input in .play-game
+                //record and print key-strokes WITHOUT refreshing anything outside of .play-game
+                //if correct {display char}
+                    //if match {playGame}
+                        //else {subtract 1 from guessesLeft}
+                    //if guessesLeft = 0 & all blanks changed to chars { 
+                        //+1 to winScore
+                        //refresh image
+                        //refresh blanks
+                        //}else{
+                            //+1 to loseScore
+                            //refresh image
+                            //refresh blanks
+                        //}
+                    }
+            function hideButton() {
+            //hide start button
+            }
+ 
+
+
 
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
