@@ -40,7 +40,7 @@
         var guessesLeft = 10;
         var winScore = 0;
         var loseScore = 0;
-
+        var numBlanks = 0;
         
         //EVENT: click on start button starts game/resets
         function startGame() {
@@ -59,10 +59,21 @@
                 }
 
                 console.log(fileName)
-            // dot placeholder (temporary)    
-                document.getElementById('blanks').innerHTML = "<img id='dot' src='./images/dot.jpg' />"
+            // input    
+                document.getElementById('blanks').innerHTML = "guess here: <input type='text' id='keyEvent' onkeyup='keyLetter'><br>"
 
             //display blanks in .play-game
+                numBlanks = length - 4;
+                console.log(numBlanks)
+
+                //create input for guesses
+                function keyLetter() {
+                    var x = document.getElementById("keyEvent");
+                    
+                }
+                //print keyLetter
+                var keyStroke = 0;
+
                 //print name of image
 
                 //show characters as blanks
